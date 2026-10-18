@@ -1,114 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:orientation="horizontal">
 
-    <!-- 1. Header TextView hiển thị thông báo chọn (To hơn, nổi bật) -->
-    <TextView
-        android:id="@+id/tvSelection"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentList"
+        android:name="com.example.hw03.UserList"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="You choose: "
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="#1A237E"
-        android:background="#F5F5F5"
-        android:padding="12dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="match_parent"
+        android:layout_weight="2" />
 
-    <!-- Đường phân cách đậm 1: Giữa TextView và ListView -->
-    <View
-        android:id="@+id/dividerTop"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentDetail"
+        android:name="com.example.hw03.UserDetail"
         android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="8dp"
-        android:background="#424242"
-        app:layout_constraintTop_toBottomOf="@id/tvSelection"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- 2. ListView danh sách người dùng (Gạch phân cách item đậm hơn) -->
-    <ListView
-        android:id="@+id/listUsers"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
-        android:divider="#757575"
-        android:dividerHeight="2dp"
-        android:scrollbars="none"
-        android:overScrollMode="never"
-        app:layout_constraintTop_toBottomOf="@id/dividerTop"
-        app:layout_constraintBottom_toTopOf="@id/dividerBottom"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Đường phân cách đậm 2: Giữa ListView và cụm nút bấm -->
-    <View
-        android:id="@+id/dividerBottom"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        android:layout_marginBottom="8dp"
-        android:background="#424242"
-        app:layout_constraintBottom_toTopOf="@id/layoutButtons"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/layoutButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="4dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:padding="0dp"
-            android:text="1"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:cornerRadius="0dp"
-            app:backgroundTint="#808080" />
-
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="4dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:padding="0dp"
-            android:text="2"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:cornerRadius="0dp"
-            app:backgroundTint="#808080"/>
-
-        <Button
-            android:id="@+id/btn3"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:padding="0dp"
-            android:text="3"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:cornerRadius="0dp"
-            app:backgroundTint="#808080"/>
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent"
+        android:layout_weight="3" />
+</LinearLayout>
